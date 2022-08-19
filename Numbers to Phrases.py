@@ -1,6 +1,8 @@
 '''
-V1 and V2
+v1 and 2
+'''
 
+'''
 ones_to_text = {
     1 : 'One',
     2 : 'Two',
@@ -64,6 +66,8 @@ print(teens_check)
 if x > 99 and x < 1000:
     if teens_check > 9 and teens_check < 20:
         print(f' {hundreds_to_text[hundreds_digit]} {teens_to_text[teens_check]}')
+    elif ones_digit == 0 and tens_digit == 0:
+        print(f' {hundreds_to_text[hundreds_digit]} Zero')
     elif ones_digit == 0:
         print(f' {hundreds_to_text[hundreds_digit]} {tens_to_text[tens_digit]}')
     else:
@@ -76,12 +80,11 @@ elif x < 20 and x > 9:
     print(f'{teens_to_text[x]}')
 elif x < 10 and x >= 0:
     print(ones_to_text[ones_digit])
-
 '''
 
 '''
 Version 3 - in progress
-
+'''
 
 
 roman_numerals = {
@@ -104,7 +107,7 @@ numerals_desc = list(sorted(roman_numerals.keys(),reverse=True))
 
 print(numerals_desc)
 
-'''
+
 
 def roman_converter(x):
     
@@ -152,9 +155,9 @@ print('Thanks for using the Roman Numeral converter!')
 
 '''
 Version 4
+'''
 
-
-
+'''
 ones_to_text = {
     1 : 'One',
     2 : 'Two',

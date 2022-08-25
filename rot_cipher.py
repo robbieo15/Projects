@@ -4,29 +4,27 @@ def rot13encrypt():
 
     while True:
 
-        listtoencrypt = (input("What are we trying to encrypt: "))
+        listtoencrypt = list(input("What are we trying to encrypt: "))
 
         #rotations = int(input("How many times would you like to rotate the cipher: "))
-        code_keys = (string.ascii_lowercase+string.ascii_uppercase)
-        code_values = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZabcdefghijklm'
+        code_keys = list((string.ascii_lowercase+string.ascii_uppercase))
+        code_values = list('nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM')
         cipher = dict(zip(code_keys,code_values))
-        decrypted_message = []
-        encrypted_message = []
+        encryptanddecrypt = {
 
-        for char in listtoencrypt:
-            encrypted_message += cipher.get(char,char)
-            decrypted_message += listtoencrypt
+        }
+
+        for letter in listtoencrypt:
+            encryptanddecrypt[letter] = cipher[letter]
         
-        print(encrypted_message)
-        print(decrypted_message)
-        
+        decryptedmessage = list(encryptanddecrypt.keys())
+        encryptedmessage = list(encryptanddecrypt.values())
 
-
-        print(f"This is your encrypted message {encrypted_message}")
+        print(f"This is your encrypted message {encryptedmessage}")
         decrypt_question = int(input('Type any number > 0 to decrypt the message:')) 
 
         if decrypt_question > 0:
-            print(f"This is your decrypted message: {decrypted_message} - look familiar?")
+            print(f"This is your decrypted message: {decryptedmessage} - look familiar?")
         
         tryagain = input("Type y if you want to try again: ").upper()
         if tryagain == 'Y':

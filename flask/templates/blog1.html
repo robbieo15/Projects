@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Blog 1</title>
+</head>
+<div class="header">
+</div>
+<body class="justify-self-center">
+<ul>{{blogs[1]['title']}}:
+    <br>
+    <ul>
+        {{blogs[1]['body']}}
+    </ul>
+    
+</body>
+<div class="footer">
+    <p>Thank you For Visiting Our Blog!</p>
+    <img src="{{ url_for('static', filename=images/running-explosion.gif) }}" alt="marshmellow running away from flames">
+</div>
+</html>

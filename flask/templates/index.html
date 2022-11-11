@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Home</title>
+</head>
+<nav class="bg-blue w-full top-1 border-b">
+    <div class="container flex flex-wrap justify-between items-center">
+    <a href="http://127.0.0.1:5000/" class="flex items-center">
+        <img src="{{ url_for('static', filename='images/moneyfist.jpg') }}" class="w-auto h-auto flex-wrap" alt="moneyfist">
+        <span class="text-xl flex-wrap script">Capital Punch</span>
+    </a>
+    <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="http://127.0.0.1:5000/blog1" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Blog 1</a>
+        </li>
+        <li>
+          <a href="http://127.0.0.1:5000/blog2" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog 2</a>
+        </li>
+        <li>
+          <a href="http://127.0.0.1:5000/blog3"  class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog 3</a>
+        </li>
+        <li>
+            <a href="http://127.0.0.1:5000/blog4" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog 4</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>  
+<body>
+<ul class="blogtitles">The blogs of today are: <br>
+    {%for items in blogs%}
+    <br>
+    <ul>
+        {{items['key']}}: {{items['title']}} <br>
+    </ul>
+    {% endfor %}
+    <br>
+</body>
+
+<div class="footer">
+    <p>Thank you For Visiting Our Blog!</p>
+    <img src="{{ url_for('static', filename='images/running-explosion.gif') }}" alt="marshmellow running away from flames">
+</div>
+</html>
